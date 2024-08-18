@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar Enlace</title>
+    <script>
+        function validarEnlace(event) {
+            event.preventDefault(); // Previene el envío del formulario
+
+            var mensaje = "Gracias, tu enlace ha sido enviado.";
+            alert(mensaje);
+
+            // Envía el formulario a Formspree
+            event.target.submit();
+        }
+    </script>
+</head>
+<body>
+    <h1>Validar Enlace</h1>
+    <form onsubmit="validarEnlace(event)" method="POST" action="https://formspree.io/f/mrbzaglo">
+        <label for="url">Ingresa un enlace:</label>
+        <input type="url" id="url" name="url" required>
+        <button type="submit">Validar</button>
+    </form>
+</body>
+</html>
+
